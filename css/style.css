@@ -454,81 +454,40 @@ footer p {
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-/* Medium devices (tablets, 768px to 1024px) */
 @media (max-width: 1024px) {
-    .main-container {
-        padding: 0 30px; /* Slightly reduce padding */
+    .hebergements-and-populaires {
+        flex-direction: column;
     }
 
-    .grid-container a {
-        width: 48%; /* Make the grid items take more space */
+    .hebergements {
+        width: 100%;
     }
 
-    .hebergements,
     .populaires {
-        width: 100%; /* Full width for these sections */
+        width: 100%;
+        margin-top: 50px;
     }
 
-    .hebergements-cards .card-content,
-    .populaires-cards .card-content {
-        width: 100%; /* Adjust the width of card contents */
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .search-bar-container {
-        width: 100%; /* Full width for better usability */
+    .populaires-cards a {
+        width: 30%;
     }
 
-    /* ... (additional tablet-specific styles) ... */
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    .main-container {
-        padding: 0 20px; /* Further reduce padding */
-    }
-
-    .grid-container a {
-        width: 100%; /* Stack grid items vertically */
-    }
-
-    .filter-button,
-    .search-button {
-        padding: 8px 15px; /* Adjust button padding */
-    }
-
-    .section-title,
-    .card-title {
-        font-size: 18px; /* Slightly reduce font size */
-    }
-
-    .hebergements-and-populaires {
-        flex-direction: column; /* Stack sections vertically */
-    }
-
-    .activities article img {
-        height: auto; /* Adjust image height to maintain aspect ratio */
-    }
-
-    /* ... (additional mobile-specific styles) ... */
-}
-
-/* Extra Small Devices (Very small phones, less than 480px) */
-@media (max-width: 480px) {
-    header {
-        flex-direction: column; /* Stack header elements */
-        align-items: center;
-    }
-
-    .logo,
-    .nav {
-        order: 0; /* Reset order for stacked elements */
-        margin-bottom: 10px;
-    }
-
-    .section-title,
-    .card-title {
-        font-size: 16px; /* Further reduce font sizes */
-    }
-
-    /* ... (additional very small phone-specific styles) ... */
+    /* ... */
 }
