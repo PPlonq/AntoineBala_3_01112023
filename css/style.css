@@ -1,5 +1,4 @@
 /****** General ***********/
-
 * {
     font-family: "Raleway", sans-serif;
 }
@@ -31,6 +30,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    padding: 19px 0px;
 }
 
 .logo {
@@ -40,7 +40,6 @@ header {
 .logo img {
     height: 19px;
     width: 61.09px;
-    padding: 30px 50px;
 }
 
 nav {
@@ -49,7 +48,6 @@ nav {
 
 ul {
     list-style: none;
-    padding-bottom: 39px;
 }
 
 li {
@@ -74,8 +72,11 @@ a {
     text-decoration: none;
     position: relative;
     transition: color 0.3s;
-    padding-top: 10px;
-    gap: 68px;
+    /* gap: 68px; */
+}
+
+header a {
+    padding-top: 19px;
 }
 
 header a::before {
@@ -202,33 +203,34 @@ h2 {
 
 .search-icon {
     display: flex;
-    background-color: var(--blocks-bg-color);
+    background-color: var(--main-bg-color);
     color: black;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    padding: 10px 20px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
 }
 
 .search-bar-container {
     display: flex;
     width: 377px;
     align-items: center;
-    gap: 24px;
     padding: 35px 0;
 }
 
 .search-input {
     flex-grow: 1;
-    border: none;
     outline: none;
-    color: var(--Black, #000);
     text-align: center;
-    font-family: Raleway;
     font-size: 18px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    border: 1px solid var(--main-bg-color);
+    padding: 0;
+    height: 48px;
+    width: 100px;
 }
 
 .search-button {
@@ -237,14 +239,26 @@ h2 {
     background-color: #0065fc; /* Adjust the color to match your design */
     color: white;
     border-radius: 0px 15px 15px 0px; /* Adjust if you want the button to be fully rounded */
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     font-size: 17px; /* Adjust as needed */
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 132px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-button:hover {
     background-color: #0056cc; /* A darker shade when hovered */
+}
+
+.mobile-icon {
+    display: none; /* Hide on mobile by default */
+}
+
+.desktop-text {
+    display: flex; /* Show text on mobile */
 }
 
 /****** Hebergements And Populaires ***********/
@@ -296,19 +310,18 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 33px;
 }
 
 .hebergements-cards img {
     width: 100%;
-    height: auto;
+    height: 114px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom: 0px;
 }
 
 .hebergements-cards .card-content {
-    width: 67%;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -325,7 +338,6 @@ p {
 }
 
 .hebergements-cards .card-subtitle {
-    margin: 0;
     size: 14px;
     font-weight: 400;
 }
@@ -385,7 +397,7 @@ p {
 .activities {
     display: flex;
     gap: 30px;
-    width: 100%;
+    padding-bottom: 35px;
 }
 
 /* .activities article {
@@ -397,21 +409,22 @@ p {
     width: 100%;
     object-fit: cover;
     height: 380px;
-    border-top-right-radius: 5%;
-    border-top-left-radius: 5%;
 }
 
 .activities article {
     margin-bottom: 30px;
     box-shadow: 0px 3px 15px 0px #0000001a;
+    border-radius: 20px;
+    width: 25%;
+    overflow: hidden;
 }
 
 /* Styles activities titles articles */
 .activities article h3 {
     font-weight: 700;
     line-height: 18.78px;
-    size: 16px;
-    margin-left: 20px;
+    font-size: 16px;
+    margin: 20px;
 }
 
 /* Styles activities title section */
@@ -439,10 +452,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Aligns the content to the left */
+    width: 33%;
 }
 
 footer h3 {
     margin-bottom: 10px; /* Adds some space below the footer headings */
+    margin-top: 0;
     font-size: 18px; /* Adjust as needed */
 }
 
@@ -452,42 +467,182 @@ footer p {
 }
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+    .logo,
+    nav {
+        order: 0;
+    }
+
     .hebergements-and-populaires {
+        display: flex;
         flex-direction: column;
+        gap: 25px;
     }
 
-    .hebergements {
-        width: 100%;
+    nav ul li {
+        margin-left: 40px;
+        height: 100%;
+    }
+    .filter-text {
+        display: block;
+    }
+    .filter-text h2 {
+        padding-bottom: 20px;
+    }
+    .filter-button {
+        display: flex;
     }
 
+    .hebergements,
     .populaires {
         width: 100%;
-        margin-top: 50px;
     }
 
-    .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+    /* .grid-container a {
+        width: 48%;
+    } */
+
+    /* .populaires-cards a {
+        width: 48%;
+    } */
+
+    /* .activities article {
+        width: 48%;
+    } */
+
+    /* .search-bar-container {
+        flex-direction: column;
+        width: auto;
     }
 
-    .populaires-cards a {
-        width: 30%;
-    }
+    .search-input {
+        text-align: left;
+        margin-top: 10px;
+    } */
 
-    .populaires-cards .card-title {
-        font-size: 14px;
-    }
-
-    .populaires-cards .card-subtitle {
-        font-size: 13px;
+    .activities article img {
+        height: 200px;
     }
 }
 
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .main-container {
+        padding: 0;
+    }
+    .logo img {
+        margin-bottom: 10px;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul li {
+        margin-left: 40px;
+        width: 100%;
+    }
+    .search-bar-container {
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .mobile-icon {
+        display: flex; /* Keep hiding the icon on desktop */
+    }
+
+    .desktop-text {
+        display: none; /* Show text on desktop */
+    }
+    .search-button {
+        display: flex;
+        border: 1px solid #0065fc;
+        background-color: #0065fc;
+        color: white;
+        border-radius: 15px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-items: center;
+        justify-content: center;
+    }
+    .filter-text {
+        padding: 0 20px;
+        display: block;
+    }
+
+    .mobile {
+        padding: 20px;
+    }
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .filter-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 45%;
+        text-align: center;
+    }
+
+    .hebergements-and-populaires {
+        flex-direction: column-reverse;
+    }
+
+    .hebergements-and-populaires section {
+        border-radius: 0px;
+    }
+
+    section.hebergements {
+        background-color: transparent;
+    }
+
+    .grid-container a,
+    .populaires-cards a {
+        width: 100%;
+    }
+
+    .hebergements-cards img {
+        height: 124px;
+    }
+    .activities-title {
+        padding-left: 30px;
+    }
+    .activities {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .activities article {
+        width: 100%;
+    }
+
+    .activities article img {
+        height: 141px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .box {
+        width: 100%;
+        padding: 30px 0 30px 30px;
+        gap: 15px;
+    }
 }
